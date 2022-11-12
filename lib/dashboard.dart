@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hackathon_application/loginpage.dart';
+import 'package:hackathon_application/UI_Models/dashboard_models.dart';
 
 class Dashboard extends StatefulWidget {
   @override
@@ -77,7 +78,7 @@ class _DashboardState extends State<Dashboard> {
           ),
         ),
         ListView.builder(
-          itemCount: 3,
+          itemCount: transactions.length,
           padding: EdgeInsets.only(left: 16, right: 16),
           shrinkWrap: true,
           itemBuilder: (context, index) {
@@ -107,9 +108,9 @@ class _DashboardState extends State<Dashboard> {
                         height: 57,
                         width: 57,
                         decoration: BoxDecoration(
-                          shape: BoxShape.circle,
+                          shape: BoxShape.rectangle,
                           image: DecorationImage(
-                            image: AssetImage('assets/organization-icon.png'),
+                            image: AssetImage(transactions[index].photo),
                           ),
                         ),
                       ),
@@ -121,7 +122,7 @@ class _DashboardState extends State<Dashboard> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Text(
-                            'My Organizations',
+                            transactions[index].name,
                             style: GoogleFonts.inter(
                                 fontSize: 18,
                                 fontWeight: FontWeight.w700,
@@ -134,7 +135,7 @@ class _DashboardState extends State<Dashboard> {
                   Row(
                     children: <Widget>[
                       Text(
-                        'Members: 2',
+                        transactions[index].info,
                         style: GoogleFonts.inter(
                           fontSize: 10,
                           fontWeight: FontWeight.w500,
