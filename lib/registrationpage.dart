@@ -127,7 +127,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                      return const Dashboard();
+                      return Dashboard();
                     }));
                   },
                   child: Container(

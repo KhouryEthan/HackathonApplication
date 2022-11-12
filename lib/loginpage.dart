@@ -30,22 +30,27 @@ class _LoginPageState extends State<LoginPage> {
                   child: Image.asset('assets/smartlogger-logo.png'),
                 ),
               ),
+              Center(
+                //Hello again
+                child: Text(
+                  'Hello Again!',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 24,
+                  ),
+                ),
+              ),
 
-              //Hello again
-              Text(
-                'Hello Again!',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 24,
-                ),
-              ),
               SizedBox(height: 10),
-              Text(
-                'Welcome back!',
-                style: TextStyle(
-                  fontSize: 20,
+              Center(
+                child: Text(
+                  'Welcome back!',
+                  style: TextStyle(
+                    fontSize: 20,
+                  ),
                 ),
               ),
+
               SizedBox(height: 20),
               //Email Field
               Padding(
