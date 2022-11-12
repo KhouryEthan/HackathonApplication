@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:hackathon_application/dashboard.dart';
+import 'package:hackathon_application/registrationpage.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -130,13 +131,21 @@ class _LoginPageState extends State<LoginPage> {
                     'Not a member?',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
-                  Text(
-                    ' Register now',
-                    style: TextStyle(
-                      color: Colors.blue,
-                      fontWeight: FontWeight.bold,
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return RegistrationPage();
+                      }));
+                    },
+                    child: Text(
+                      ' Register now',
+                      style: TextStyle(
+                        color: Colors.blue,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
+                  )
                 ],
               ),
             ],
