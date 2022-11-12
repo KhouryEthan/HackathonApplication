@@ -10,7 +10,7 @@ class Dashboard extends StatelessWidget {
     return Scaffold(
         body: SafeArea(
             child: Center(
-                child: Column(
+                child: ListView(
       children: const <Widget>[
         Text('data', style: TextStyle(fontSize: 25)),
       ],
