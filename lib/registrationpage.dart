@@ -138,7 +138,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                     ),
                     child: Center(
                       child: Text(
-                        'Log In',
+                        'Register',
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
