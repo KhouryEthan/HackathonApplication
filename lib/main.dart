@@ -13,6 +13,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
+      //Dark mode?
+      //theme: ThemeData.dark(),
       home: LoginPage(),
     );
   }
