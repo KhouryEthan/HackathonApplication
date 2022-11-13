@@ -34,8 +34,16 @@ List<Appointment> getAppointments() {
   final DateTime endTime = startTime.add(const Duration(hours: 2));
 
   final DateTime startTime2 =
-      DateTime(today.year, today.month, today.day, 9, 0, 0);
-  final DateTime endTime2 = startTime.add(const Duration(hours: 2));
+      DateTime(today.year, today.month, today.day + 1, 9, 0, 0);
+  final DateTime endTime2 = startTime2.add(const Duration(hours: 2));
+
+  final DateTime startTime3 =
+      DateTime(today.year, today.month, today.day + 3, 16, 0, 0);
+  final DateTime endTime3 = startTime3.add(const Duration(hours: 3));
+
+  final DateTime startTime4 =
+      DateTime(today.year, today.month, today.day + 4, 11, 0, 0);
+  final DateTime endTime4 = startTime4.add(const Duration(hours: 4));
 
   meetings.add(Appointment(
       startTime: startTime,
@@ -44,11 +52,22 @@ List<Appointment> getAppointments() {
       color: Colors.blue));
 
   meetings.add(Appointment(
-      startTime: startTime,
-      endTime: endTime,
+      startTime: startTime2,
+      endTime: endTime2,
       subject: 'Hale Library',
       color: Colors.green));
 
+  meetings.add(Appointment(
+      startTime: startTime3,
+      endTime: endTime3,
+      subject: 'Student Union',
+      color: Colors.red));
+
+  meetings.add(Appointment(
+      startTime: startTime4,
+      endTime: endTime4,
+      subject: 'Engineering Building',
+      color: Colors.orange));
   return meetings;
 }
 
