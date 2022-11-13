@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:hackathon_application/dashboard.dart';
+import 'locationPage.dart';
 import 'loginpage.dart';
 
 Future main() async {
@@ -21,7 +22,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       //Dark mode?
       //theme: ThemeData.dark(),
-      home: MainPage(),
+      home: MapScreen
+        (),
     );
   }
 }
