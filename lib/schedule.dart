@@ -30,14 +30,24 @@ List<Appointment> getAppointments() {
   List<Appointment> meetings = <Appointment>[];
   final DateTime today = DateTime.now();
   final DateTime startTime =
-      DateTime(today.year, today.month, today.day, 9, 0, 0);
+      DateTime(today.year, today.month, today.day, 12, 0, 0);
   final DateTime endTime = startTime.add(const Duration(hours: 2));
+
+  final DateTime startTime2 =
+      DateTime(today.year, today.month, today.day, 9, 0, 0);
+  final DateTime endTime2 = startTime.add(const Duration(hours: 2));
 
   meetings.add(Appointment(
       startTime: startTime,
       endTime: endTime,
-      subject: 'Conference',
+      subject: 'Business Building',
       color: Colors.blue));
+
+  meetings.add(Appointment(
+      startTime: startTime,
+      endTime: endTime,
+      subject: 'Hale Library',
+      color: Colors.green));
 
   return meetings;
 }

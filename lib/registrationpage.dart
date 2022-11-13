@@ -49,7 +49,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       borderRadius: BorderRadius.circular(200),
                     ),
                     child: Center(
-                      child: Image.asset('assets/smartlogger-logo.png'),
+                      child: Image.asset('assets/hourfi-logo.png'),
                     ),
                   ),
                   Center(
