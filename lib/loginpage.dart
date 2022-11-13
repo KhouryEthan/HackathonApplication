@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hackathon_application/dashboard.dart';
 import 'package:hackathon_application/registrationpage.dart';
@@ -12,6 +13,17 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,8 +77,8 @@ class _LoginPageState extends State<LoginPage> {
                   child: Padding(
                     padding: const EdgeInsets.only(left: 20.0),
                     child: TextField(
-                      decoration: InputDecoration(
-                          border: InputBorder.none, hintText: 'Email/Username'),
+                      controller: emailController,
+                      decoration: InputDecoration(labelText: 'Email'),
                     ),
                   ),
                 ),
@@ -85,8 +97,8 @@ class _LoginPageState extends State<LoginPage> {
                     padding: const EdgeInsets.only(left: 20.0),
                     child: TextField(
                       obscureText: true,
-                      decoration: InputDecoration(
-                          border: InputBorder.none, hintText: 'Password'),
+                      controller: passwordController,
+                      decoration: InputDecoration(labelText: 'Password'),
                     ),
                   ),
                 ),
@@ -96,12 +108,7 @@ class _LoginPageState extends State<LoginPage> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
                 child: TextButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                      return Dashboard();
-                    }));
-                  },
+                  onPressed: signIn,
                   child: Container(
                     padding: EdgeInsets.all(20),
                     decoration: BoxDecoration(
@@ -153,5 +160,28 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
+  }
+
+  Future signIn() async {
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: emailController.text.trim(),
+          password: passwordController.text.trim());
+    } on FirebaseAuthException catch (e) {
+      // TODO
+      showDialog(
+        context: context,
+        builder: (ctx) => AlertDialog(
+          title: Text("Error"),
+          content: Text("Invalid Email/Password Combination"),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () => Navigator.of(ctx).pop(),
+              child: const Text('OK'),
+            ),
+          ],
+        ),
+      );
+    }
   }
 }
