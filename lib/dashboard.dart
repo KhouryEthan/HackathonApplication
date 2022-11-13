@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hackathon_application/loginpage.dart';
-import 'package:hackathon_application/UI_Models/dashboard_models.dart';
-import 'package:hackathon_application/organization.dart';
 
 class Dashboard extends StatefulWidget {
   @override
@@ -78,91 +76,74 @@ class _DashboardState extends State<Dashboard> {
           ),
         ),
         ListView.builder(
-          itemCount: transactions.length,
+          itemCount: 3,
           padding: EdgeInsets.only(left: 16, right: 16),
           shrinkWrap: true,
           itemBuilder: (context, index) {
-            return InkWell(
-              child: Container(
-                height: 76,
-                margin: EdgeInsets.only(bottom: 13),
-                padding:
-                    EdgeInsets.only(left: 24, top: 12, bottom: 12, right: 22),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(15),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black12,
-                      blurRadius: 10,
-                      spreadRadius: 5,
-                      offset: Offset(8.0, 8.0),
-                    )
-                  ],
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Row(
-                      children: <Widget>[
-                        Container(
-                          height: 57,
-                          width: 57,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.rectangle,
-                            image: DecorationImage(
-                              image: AssetImage(transactions[index].photo),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 13,
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Text(
-                              transactions[index].name,
-                              style: GoogleFonts.inter(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.black),
-                            ),
-                          ],
-                        )
-                      ],
-                    ),
-                    Row(
-                      children: <Widget>[
-                        Text(
-                          transactions[index].info,
-                          style: GoogleFonts.inter(
-                            fontSize: 10,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.lightBlueAccent,
-                          ),
-                        )
-                      ],
-                    )
-                  ],
-                ),
+            return Container(
+              height: 76,
+              margin: EdgeInsets.only(bottom: 13),
+              padding:
+                  EdgeInsets.only(left: 24, top: 12, bottom: 12, right: 22),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(15),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black12,
+                    blurRadius: 10,
+                    spreadRadius: 5,
+                    offset: Offset(8.0, 8.0),
+                  )
+                ],
               ),
-              onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  if (transactions[index].path == 'org') {
-                    return OrganizationPage();
-                  }
-                  if (transactions[index].path == 'loc') {
-                    return LoginPage();
-                  }
-                  if (transactions[index].path == 'sched') {
-                    return LoginPage();
-                  } else {
-                    throw new Exception('Not a valid page');
-                  }
-                }));
-              },
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Row(
+                    children: <Widget>[
+                      Container(
+                        height: 57,
+                        width: 57,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                            image: AssetImage('assets/organization-icon.png'),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 13,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            'My Organizations',
+                            style: GoogleFonts.inter(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w700,
+                                color: Colors.black),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                  Row(
+                    children: <Widget>[
+                      Text(
+                        'Members: 2',
+                        style: GoogleFonts.inter(
+                          fontSize: 10,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.lightBlueAccent,
+                        ),
+                      )
+                    ],
+                  )
+                ],
+              ),
             );
           },
         ),
