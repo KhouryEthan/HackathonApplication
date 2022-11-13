@@ -4,6 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:hackathon_application/dashboard.dart';
 import 'loginpage.dart';
 import 'auth_page.dart';
+import 'locationPage.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
