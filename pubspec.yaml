@@ -45,6 +45,7 @@ dependencies:
   email_validator: ^2.0.1
   table_calendar: ^3.0.3
   shared_preferences: ^2.0.15
+  syncfusion_flutter_calendar: ^19.1.54
 
   # Firebase Database
   cloud_firestore: ^4.0.5
