@@ -1,12 +1,18 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:hackathon_application/dashboard.dart';
 import 'package:hackathon_application/registrationpage.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+  final VoidCallback onClickedSignUp;
+
+  const LoginPage({
+    Key? key,
+    required this.onClickedSignUp,
+  }) : super(key: key);
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -40,13 +46,13 @@ class _LoginPageState extends State<LoginPage> {
                   borderRadius: BorderRadius.circular(200),
                 ),
                 child: Center(
-                  child: Image.asset('assets/smartlogger-logo.png'),
+                  child: Image.asset('assets/hourfi-logo.png'),
                 ),
               ),
               Center(
                 //Hello again
                 child: Text(
-                  'Hello Again!',
+                  'Welcome Back!',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 24,
@@ -55,14 +61,6 @@ class _LoginPageState extends State<LoginPage> {
               ),
 
               SizedBox(height: 10),
-              Center(
-                child: Text(
-                  'Welcome back!',
-                  style: TextStyle(
-                    fontSize: 20,
-                  ),
-                ),
-              ),
 
               SizedBox(height: 20),
               //Email Field
@@ -131,30 +129,27 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(height: 10),
 
               //Not member? REGISTER NOW
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'Not a member?',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {
-                        return RegistrationPage();
-                      }));
-                    },
-                    child: Text(
-                      ' Register now',
-                      style: TextStyle(
-                        color: Colors.blue,
-                        fontWeight: FontWeight.bold,
-                      ),
+              Center(
+                child: RichText(
+                  text: TextSpan(
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16,
                     ),
-                  )
-                ],
-              ),
+                    text: 'Not a member? ',
+                    children: [
+                      TextSpan(
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = widget.onClickedSignUp,
+                          text: 'Register Here',
+                          style: TextStyle(
+                            decoration: TextDecoration.underline,
+                            color: Theme.of(context).colorScheme.secondary,
+                          ))
+                    ],
+                  ),
+                ),
+              )
             ],
           ),
         ),

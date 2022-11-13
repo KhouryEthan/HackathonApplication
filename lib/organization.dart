@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:hackathon_application/style.dart';
 import 'package:hackathon_application/UI_Models/organization_models.dart';
 
@@ -6,28 +7,56 @@ class OrganizationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Organizations'),
+      ), //AppBar
       backgroundColor: Colors.lightBlue,
       body: ListView(
         children: [
-          Container(
-            padding: EdgeInsets.only(top: 30, left: 40),
-            height: 220,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                PrimaryText(
-                  text: 'Organization -\nHackathon Group',
-                  fontSize: 32,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w900,
-                ),
-                SizedBox(height: 25),
-              ],
+          // Container(
+          //   padding: EdgeInsets.only(top: 30, left: 40),
+          //   height: 220,
+          //   child: Column(
+          //     crossAxisAlignment: CrossAxisAlignment.start,
+          //     children: [
+          //       PrimaryText(
+          //         text: 'Organization -\nHackathon Group',
+          //         fontSize: 32,
+          //         color: Colors.white,
+          //         fontWeight: FontWeight.w900,
+          //       ),
+          //       SizedBox(height: 25),
+          //     ],
+          //   ),
+          SafeArea(
+            child: Container(
+              margin: EdgeInsets.only(left: 16, right: 16, top: 0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Container(
+                    padding: EdgeInsets.only(top: 20, left: 20, right: 0),
+                    height: 100,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        PrimaryText(
+                          text: 'Hackathon Group',
+                          fontSize: 32,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w900,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
+
           Container(
-            padding: EdgeInsets.only(top: 30, left: 20, right: 20),
-            height: MediaQuery.of(context).size.height - 220,
+            padding: EdgeInsets.only(top: 10, left: 20, right: 20),
+            height: MediaQuery.of(context).size.height - 100,
             decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(

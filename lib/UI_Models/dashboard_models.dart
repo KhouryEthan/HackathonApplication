@@ -22,7 +22,7 @@ var transactionData = [
   {
     "name": "Check Location",
     "photo": "assets/LocationCheck-icon.png",
-    "info": "MapScreen()",
+    "info": "",
     "path": "loc"
   },
   {

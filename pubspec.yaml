@@ -42,10 +42,14 @@ dependencies:
   geolocator: ^8.0.1
   location: ^4.4.0
 
+  email_validator: ^2.0.1
+  table_calendar: ^3.0.3
+  shared_preferences: ^2.0.15
+  syncfusion_flutter_calendar: ^19.1.54
+
   # Firebase Database
   cloud_firestore: ^4.0.5
   firebase_auth: ^4.1.2
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -77,7 +81,7 @@ flutter:
     - assets/schedule-icon.png
     - assets/ben-pfp.png
     - assets/hursen-pfp.png
-    - assets/
+    - assets/hourfi-logo.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

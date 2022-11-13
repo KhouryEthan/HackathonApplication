@@ -2,8 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:hackathon_application/dashboard.dart';
-import 'locationPage.dart';
 import 'loginpage.dart';
+import 'auth_page.dart';
+import 'locationPage.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,8 +23,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       //Dark mode?
       //theme: ThemeData.dark(),
-      home: MapScreen
-        (),
+      home: MainPage(),
     );
   }
 }
@@ -43,7 +43,7 @@ class MainPage extends StatelessWidget {
             } else if (snapshot.hasData) {
               return Dashboard();
             } else {
-              return const LoginPage();
+              return const AuthPage();
             }
           },
         ),
