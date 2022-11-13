@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:hackathon_application/loginpage.dart';
 import 'package:hackathon_application/UI_Models/dashboard_models.dart';
 import 'package:hackathon_application/organization.dart';
+import 'package:hackathon_application/schedule.dart';
 import 'locationPage.dart';
 
 class Dashboard extends StatefulWidget {
@@ -159,10 +160,10 @@ class _DashboardState extends State<Dashboard> {
                     return OrganizationPage();
                   }
                   if (transactions[index].path == 'loc') {
-                    return const MapScreen();
+                    return MapScreen();
                   }
                   if (transactions[index].path == 'sched') {
-                    return OrganizationPage();
+                    return Schedule();
                   } else {
                     throw new Exception('Not a valid page');
                   }

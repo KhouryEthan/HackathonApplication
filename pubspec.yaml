@@ -41,7 +41,10 @@ dependencies:
   google_maps_flutter: ^2.2.1
   geolocator: ^8.0.1
   location: ^4.4.0
+
   email_validator: ^2.0.1
+  table_calendar: ^3.0.3
+  shared_preferences: ^2.0.15
 
   # Firebase Database
   cloud_firestore: ^4.0.5
