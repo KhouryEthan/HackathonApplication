@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hackathon_application/loginpage.dart';
 import 'package:hackathon_application/UI_Models/dashboard_models.dart';
+import 'package:hackathon_application/organization.dart';
 
 class Dashboard extends StatefulWidget {
   @override
@@ -151,7 +152,7 @@ class _DashboardState extends State<Dashboard> {
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   if (transactions[index].path == 'org') {
-                    return LoginPage();
+                    return OrganizationPage();
                   }
                   if (transactions[index].path == 'loc') {
                     return LoginPage();
