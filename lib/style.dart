@@ -48,7 +48,7 @@ class Avatar extends StatelessWidget {
       height: height,
       margin: EdgeInsets.only(right: 10),
       decoration: BoxDecoration(
-          color: Colors.red,
+          color: Colors.white,
           borderRadius: BorderRadius.circular(50),
           image:
               DecorationImage(image: AssetImage(avatarUrl), fit: BoxFit.cover)),
