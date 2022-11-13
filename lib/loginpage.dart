@@ -46,13 +46,13 @@ class _LoginPageState extends State<LoginPage> {
                   borderRadius: BorderRadius.circular(200),
                 ),
                 child: Center(
-                  child: Image.asset('assets/smartlogger-logo.png'),
+                  child: Image.asset('assets/hourfi-logo.png'),
                 ),
               ),
               Center(
                 //Hello again
                 child: Text(
-                  'Hello Again!',
+                  'Welcome Back!',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 24,
@@ -61,14 +61,6 @@ class _LoginPageState extends State<LoginPage> {
               ),
 
               SizedBox(height: 10),
-              Center(
-                child: Text(
-                  'Welcome back!',
-                  style: TextStyle(
-                    fontSize: 20,
-                  ),
-                ),
-              ),
 
               SizedBox(height: 20),
               //Email Field
